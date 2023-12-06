@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DogsController } from './controller/dogs.controller';
 
 const DEFAULT_ADMIN = {
   email: 'admin@example.com',
@@ -35,7 +36,7 @@ const authenticate = async (email: string, password: string) => {
       }),
     })),
   ],
-  controllers: [AppController],
+  controllers: [AppController,DogsController],
   providers: [AppService],
 })
 
